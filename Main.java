@@ -6,76 +6,77 @@
 
 //
 //
-//import java.util.*;
-//
-//public class Main {
-//
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int listSize = 1000000;
+        long begin = System.nanoTime();
+        // Create a list of random integers
+        List<Integer> list = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < listSize; i++) {
+            list.add(random.nextInt());
+        }
+
+        // Shuffle the list
+        long jdkShuffleStart = System.nanoTime();
+        Collections.shuffle(list);
+        long jdkShuffleEnd = System.nanoTime();
+
+        // Sort the list
+        long jdkSortStart = System.nanoTime();
+        Collections.sort(list);
+        long jdkSortEnd = System.nanoTime();
+
+        // Reverse the list
+        long jdkReverseStart = System.nanoTime();
+        Collections.reverse(list);
+        long jdkReverseEnd = System.nanoTime();
+
+        // Sum the list
+        long jdkSumStart = System.nanoTime();
+        int jdkSum = 0;
+        for (int i = 0; i < listSize; i++) {
+            jdkSum += list.get(i);
+        }
+        long jdkSumEnd = System.nanoTime();
+
+        // Shuffle the list again
+
+        System.out.println("JDK shuffle time: " + (jdkShuffleEnd - jdkShuffleStart) + " nanoseconds");
+        System.out.println("JDK sort time: " + (jdkSortEnd - jdkSortStart) + " nanoseconds");
+        System.out.println("JDK reverse time: " + (jdkReverseEnd - jdkReverseStart) + " nanoseconds");
+        System.out.println("JDK sum time: " + (jdkSumEnd - jdkSumStart) + " nanoseconds");
+
+        long end = System.nanoTime();
+        System.out.println("JDK total time: " + (end - begin) + " nanoseconds");
+    }
+
 //    public static void main(String[] args) {
-//        int listSize = 1000000;
-//        long begin = System.nanoTime();
-//        // Create a list of random integers
-//        List<Integer> list = new ArrayList<>();
-//        Random random = new Random();
-//        for (int i = 0; i < listSize; i++) {
-//            list.add(random.nextInt());
+//        long startTime = System.nanoTime();
+//        long totalsize = 10;
+//        for (int i = 0; i < 1000000; i++) {
+//            String s = "somestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiring";
+//            totalsize = totalsize + reverse(s).length();
 //        }
-//
-//        // Shuffle the list
-//        long jdkShuffleStart = System.nanoTime();
-//        Collections.shuffle(list);
-//        long jdkShuffleEnd = System.nanoTime();
-//
-//        // Sort the list
-//        long jdkSortStart = System.nanoTime();
-//        Collections.sort(list);
-//        long jdkSortEnd = System.nanoTime();
-//
-//        // Reverse the list
-//        long jdkReverseStart = System.nanoTime();
-//        Collections.reverse(list);
-//        long jdkReverseEnd = System.nanoTime();
-//
-//        // Sum the list
-//        long jdkSumStart = System.nanoTime();
-//        int jdkSum = 0;
-//        for (int i = 0; i < listSize; i++) {
-//            jdkSum += list.get(i);
-//        }
-//        long jdkSumEnd = System.nanoTime();
-//
-//        // Shuffle the list again
-//
-//        System.out.println("JDK shuffle time: " + (jdkShuffleEnd - jdkShuffleStart) + " nanoseconds");
-//        System.out.println("JDK sort time: " + (jdkSortEnd - jdkSortStart) + " nanoseconds");
-//        System.out.println("JDK reverse time: " + (jdkReverseEnd - jdkReverseStart) + " nanoseconds");
-//        System.out.println("JDK sum time: " + (jdkSumEnd - jdkSumStart) + " nanoseconds");
-//
-//        long end = System.nanoTime();
-//        System.out.println("JDK total time: " + (end - begin) + " nanoseconds");
+//        long endTime = System.nanoTime();
+//        long duration = (endTime - startTime) / 1000000; // convert to milliseconds
+//        System.out.println("Duration: " + duration + "ms");
 //    }
 //
-////    public static void main(String[] args) {
-////        long startTime = System.nanoTime();
-////        long totalsize = 10;
-////        for (int i = 0; i < 1000000; i++) {
-////            String s = "somestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiringsomestiring";
-////            totalsize = totalsize + reverse(s).length();
-////        }
-////        long endTime = System.nanoTime();
-////        long duration = (endTime - startTime) / 1000000; // convert to milliseconds
-////        System.out.println("Duration: " + duration + "ms");
-////    }
-////
-////    public static String reverse(String s) {
-////        StringBuilder sb = new StringBuilder();
-////        for (int i = s.length() - 1; i >= 0; i--) {
-////            sb.append(s.charAt(i));
-////        }
-////        return sb.toString();
-////    }
-//
-//
-//}
+//    public static String reverse(String s) {
+//        StringBuilder sb = new StringBuilder();
+//        for (int i = s.length() - 1; i >= 0; i--) {
+//            sb.append(s.charAt(i));
+//        }
+//        return sb.toString();
+//    }
+
+
+}
+/*
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -146,3 +147,4 @@ public class Main {
         System.out.println("Time to make " + NUM_HTTP_CALLS + " HTTP calls: " + elapsedTime + " milliseconds");
     }
 }
+*/
