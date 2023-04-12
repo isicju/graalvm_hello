@@ -1,5 +1,5 @@
 // 1st version
-//public class Main {
+//public class HelloWorld {
 //    public static void main(String[] args) {
 //        System.out.println("Hello World");
 //    }
@@ -8,7 +8,7 @@
 
 import java.util.*;
 
-public class Main {
+public class HelloWorld {
 
     public static void main(String[] args) {
         int listSize = 1000000;
@@ -88,7 +88,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main {
+public class HelloWorld {
     private static final int NUM_RANDOM_NUMBERS = 1000000;
     private static final String URL_TO_CALL = "https://www.google.com";
     private static final int NUM_HTTP_CALLS = 100;
